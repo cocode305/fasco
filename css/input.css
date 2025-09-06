@@ -39,9 +39,13 @@
         @apply font-volk font-medium uppercase;
     }
 
+    .overlay {
+        @apply w-full h-full fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-500 z-10;
+    }
+
     /* Mobile Nav */
     .mnav {
-        @apply w-11/12 h-full fixed top-0 right-0 translate-x-full opacity-0 bg-white overflow-y-auto shadow-2xl transition-all duration-500;
+        @apply w-11/12 h-full fixed top-0 right-0 z-100 translate-x-full opacity-0 bg-white overflow-y-auto shadow-2xl transition-all duration-500;
     }
     .mnav_wrapper {
         @apply pt-5 pb-10 px-[clamp(1.25rem,5vw,2.5rem)];
