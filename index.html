@@ -4,14 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/output.css">
+    <!-- <link rel="stylesheet" href="debug.css"> -->
     <!-- Google Fonts -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
-
+    <script src="https://kit.fontawesome.com/6f18932376.js" crossorigin="anonymous"></script>
     <!-- Tailwind CSS -->
-    <title>Document</title>
+    <title>Fasco</title>
 </head>
-<body>
-    
+<body class="bg-gray-100 font-">
+    <header class="relative">
+        <div class="container mx-auto px-5">
+            <nav>
+                <div class="py-5">
+                    <!-- Logo and Mobile menu btn -->
+                    <div class="flex justify-between items-center">
+                        <h2><a href="#" class="uppercase text-[clamp(1.25rem,5vw,3.25rem)]">Fasco</a></h2>
+                    
+                        <button class="mnav_open-btn"><i class="fa-solid fa-bars-staggered"></i></button>
+                    </div>
+
+                    <!-- Mobile Menu -->
+                     <div class="mnav">
+                        <!-- Mobile Menu Wrapper -->
+                        <div class="mnav_wrapper">
+                            <!-- Close button and Logo -->
+                            <div class="flex justify-between items-center">
+                                <button class="mnav_close-btn"><i class="fa-solid fa-xmark"></i></button>
+
+                                <h2><a href="#" class="uppercase text-[clamp(1.25rem,5vw,2rem)]">fesco</a></h2>
+                            </div>
+
+                            <!-- Mnav Link List -->
+                            <ul class="mnav_links-list">
+                                <li><a href="#" class="mnav_link">Home</a></li>
+                                <!-- Shop Dropdown -->
+                                <li>
+                                    <div class="dropdown">
+                                        <!-- Dropdown Button -->
+                                        <button class="dropdown_btn">
+                                            <!-- Link -->
+                                            <span class="mnav_link">Shop</span>
+                                            
+                                            <!-- Icon -->
+                                            <span class="dropdown_icon">
+                                                <i class="fa-solid fa-chevron-down"></i>
+                                            </span>
+                                        </button>
+
+                                        <!-- Dropdown Link List -->
+                                        <ul class="dropdown_list">
+                                            <div class="py-5 space-y-5">
+                                                <li><a href="#" class="dropdown_link">Accessories</a></li>
+                                                <li><a href="#" class="dropdown_link">Men's Fashion</a></li>
+                                                <li><a href="#" class="dropdown_link">Women's Fashion</a></li>
+                                            </div>
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                                <li><a href="#" class="mnav_link">Stories</a></li>
+                                <!-- Packages Dropdown -->
+                                <li>
+                                    <div class="dropdown">
+                                        <!-- Dropdown Button -->
+                                        <button class="dropdown_btn">
+                                            <!-- Link -->
+                                            <span class="mnav_link">Packages</span>
+                                    
+                                            <!-- Icon -->
+                                            <span class="dropdown_icon">
+                                                <i class="fa-solid fa-chevron-down"></i>
+                                            </span>
+                                        </button>
+
+                                        <!-- Dropdown Link List -->
+                                         <ul class="dropdown_list">
+                                             <div class="py-5 space-y-5">
+                                                <li><a href="#" class="dropdown_link">coupons</a></li>
+
+                                                <li><a href="#" class="dropdown_link">monthly deals</a></li>
+
+                                                <li><a href="#" class="dropdown_link">new arrivals</a></li>
+
+                                            </div>
+                                         </ul>
+                                    
+                                    </div>
+                                </li>
+                                <li><a href="#" class="mnav_link">About Us</a></li>
+                                <li><a href="#" class="mnav_link">Contact Us</a></li>
+                                <li><a href="#" class="mnav_btn sign-in">Sign in</a></li>
+                                <li><a href="#" class="mnav_btn sign-up">Sign Up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div> 
+    </header>
+
+    <script type="module" src="app.js"></script>
 </body>
 </html>
