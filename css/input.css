@@ -40,11 +40,14 @@
     }
 
     .overlay {
-        @apply w-full h-full fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-500 z-10;
+        @apply w-full h-full fixed inset-0 bg-black/50 opacity-0  transition-opacity duration-500 z-10;
     }
 
     /* Mobile Nav */
     .mnav {
+        @apply flex justify-between items-center fixed top-0 left-0 w-full h-20 px-5 bg-white shadow;
+    }
+    .mnav_menu {
         @apply w-11/12 h-full fixed top-0 right-0 z-100 translate-x-full opacity-0 bg-white overflow-y-auto shadow-2xl transition-all duration-500;
     }
     .mnav_wrapper {
@@ -57,7 +60,7 @@
         @apply h-full mt-[70px] space-y-[30px];
     }
     .mnav_open-btn {
-        @apply text-[clamp(1.5rem,5vw,2rem)] text-secondary cursor-pointer tablet-lg:hidden p-5;
+        @apply text-[clamp(1.5rem,5vw,2rem)] text-secondary cursor-pointer tablet-lg:hidden;
     }
     .mnav_close-btn {
         @apply text-[clamp(1.5rem,5vw,2rem)] text-secondary cursor-pointer;

@@ -180,6 +180,9 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .fixed {
+    position: fixed;
+  }
   .relative {
     position: relative;
   }
@@ -222,14 +225,23 @@
   .flex {
     display: flex;
   }
+  .table {
+    display: table;
+  }
   .max-h-0 {
     max-height: calc(var(--spacing) * 0);
+  }
+  .max-h-9 {
+    max-height: calc(var(--spacing) * 9);
   }
   .max-h-96 {
     max-height: calc(var(--spacing) * 96);
   }
-  .max-h-\[500px\] {
-    max-height: 500px;
+  .w-full {
+    width: 100%;
+  }
+  .border-collapse {
+    border-collapse: collapse;
   }
   .translate-x-0 {
     --tw-translate-x: calc(var(--spacing) * 0);
@@ -241,6 +253,9 @@
   }
   .rotate-180 {
     rotate: 180deg;
+  }
+  .resize {
+    resize: both;
   }
   .items-center {
     align-items: center;
@@ -254,6 +269,13 @@
       margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
     }
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
@@ -273,11 +295,18 @@
   .uppercase {
     text-transform: uppercase;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .opacity-0 {
     opacity: 0%;
   }
   .opacity-100 {
     opacity: 100%;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -303,7 +332,6 @@
     text-transform: uppercase;
   }
   .overlay {
-    pointer-events: none;
     position: fixed;
     inset: calc(var(--spacing) * 0);
     z-index: 10;
@@ -321,6 +349,20 @@
     transition-duration: 500ms;
   }
   .mnav {
+    position: fixed;
+    top: calc(var(--spacing) * 0);
+    left: calc(var(--spacing) * 0);
+    display: flex;
+    height: calc(var(--spacing) * 20);
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    padding-inline: calc(var(--spacing) * 5);
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .mnav_menu {
     position: fixed;
     top: calc(var(--spacing) * 0);
     right: calc(var(--spacing) * 0);
@@ -366,7 +408,6 @@
   }
   .mnav_open-btn {
     cursor: pointer;
-    padding: calc(var(--spacing) * 5);
     font-size: clamp(1.5rem, 5vw, 2rem);
     color: var(--color-secondary);
     @media (width >= 64rem) {
@@ -455,6 +496,16 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-blur {
   syntax: "*";
@@ -589,6 +640,8 @@
       --tw-translate-y: 0;
       --tw-translate-z: 0;
       --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
