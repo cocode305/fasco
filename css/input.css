@@ -60,7 +60,7 @@
         }
 
         .nav_wrapper {
-            @apply flex justify-between items-center px-10;
+            @apply flex justify-between items-center px-5 tablet-lg:px-10 py-2.5;
         }
 
         /* Mobile Navigations */
@@ -77,7 +77,7 @@
                 transition-all duration-500 
                 tablet-lg:hidden /* Hide on Desktop devices */;
             }
-            .mnav_wrapper {
+            .mnav_menu-wrapper {
                 @apply pt-5 pb-10 px-[clamp(1.25rem,5vw,2.5rem)];
             }
             .mnav_btn {

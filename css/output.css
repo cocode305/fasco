@@ -405,7 +405,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: calc(var(--spacing) * 10);
+    padding-inline: calc(var(--spacing) * 5);
+    padding-block: calc(var(--spacing) * 2.5);
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 10);
+    }
   }
   .mnav {
     position: relative;
@@ -444,7 +448,7 @@
       display: none;
     }
   }
-  .mnav_wrapper {
+  .mnav_menu-wrapper {
     padding-inline: clamp(1.25rem, 5vw, 2.5rem);
     padding-top: calc(var(--spacing) * 5);
     padding-bottom: calc(var(--spacing) * 10);
