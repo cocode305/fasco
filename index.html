@@ -16,98 +16,118 @@
     <!-- Tailwind CSS -->
     <title>Fasco</title>
 </head>
-<body class="bg-gray-100 font-">
-    <!-- OVERLAY -->
-     <div id="overlay" class="overlay"></div>
+<body class="bg-gray-100 relative">
     <header class="relative">
-        <div class="container mx-auto px-5">
-            <nav>
-                <div class="relative w-full">
+        <nav>
+            <div class="container mx-auto">
+                <!-- OVERLAY -->
+                <div id="overlay" class="overlay"></div>
+
+                <div class="nav_wrapper">
                     <!-- Logo and Mobile menu btn -->
                     <div class="mnav">
-                        <h2><a href="#" class="uppercase text-[clamp(1.25rem,5vw,3.25rem)]">Fasco</a></h2>
+                        <h2><a href="#" class="uppercase text-[clamp(1.25rem,5vw,2rem)] tablet-lg:text-[clamp(2rem,3vw,3.25rem)]">Fasco</a></h2>
                     
                         <button class="mnav_open-btn"><i class="fa-solid fa-bars-staggered"></i></button>
                     </div>
-
-                    <!-- Mobile Menu -->
-                     <div class="mnav_menu">
+                    
+                    <!-- Mobile Navigation Menu -->
+                    <div class="mnav_menu">
                         <!-- Mobile Menu Wrapper -->
                         <div class="mnav_wrapper">
                             <!-- Close button and Logo -->
                             <div class="flex justify-between items-center">
                                 <button class="mnav_close-btn"><i class="fa-solid fa-xmark"></i></button>
-
+                    
                                 <h2><a href="#" class="uppercase text-[clamp(1.25rem,5vw,2rem)]">fesco</a></h2>
                             </div>
-
+                    
                             <!-- Mnav Link List -->
                             <ul class="mnav_links-list">
                                 <li><a href="#" class="mnav_link">Home</a></li>
+                                <li><a href="#" class="mnav_link">Deals</a></li>
+                    
                                 <!-- Shop Dropdown -->
                                 <li>
                                     <div class="dropdown">
                                         <!-- Dropdown Button -->
                                         <button class="dropdown_btn">
                                             <!-- Link -->
-                                            <span class="mnav_link">Shop</span>
-                                            
+                                            <span class="dropdown_btn-text">Shop</span>
+                    
                                             <!-- Icon -->
                                             <span class="dropdown_icon">
                                                 <i class="fa-solid fa-chevron-down"></i>
                                             </span>
                                         </button>
-
+                    
                                         <!-- Dropdown Link List -->
                                         <ul class="dropdown_list">
-                                            <div class="py-5 space-y-5">
+                                            <div class="dropdown_list-wrapper">
                                                 <li><a href="#" class="dropdown_link">Accessories</a></li>
                                                 <li><a href="#" class="dropdown_link">Men's Fashion</a></li>
                                                 <li><a href="#" class="dropdown_link">Women's Fashion</a></li>
                                             </div>
                                         </ul>
-                                        
+                    
                                     </div>
                                 </li>
+                    
                                 <li><a href="#" class="mnav_link">Stories</a></li>
+                    
                                 <!-- Packages Dropdown -->
                                 <li>
                                     <div class="dropdown">
                                         <!-- Dropdown Button -->
                                         <button class="dropdown_btn">
                                             <!-- Link -->
-                                            <span class="mnav_link">Packages</span>
-                                    
+                                            <span class="dropdown_btn-text">Packages</span>
+                    
                                             <!-- Icon -->
                                             <span class="dropdown_icon">
                                                 <i class="fa-solid fa-chevron-down"></i>
                                             </span>
                                         </button>
-
+                    
                                         <!-- Dropdown Link List -->
-                                         <ul class="dropdown_list">
-                                             <div class="py-5 space-y-5">
+                                        <ul class="dropdown_list">
+                                            <div class="dropdown_list-wrapper">
                                                 <li><a href="#" class="dropdown_link">coupons</a></li>
-
+                    
                                                 <li><a href="#" class="dropdown_link">monthly deals</a></li>
-
+                    
                                                 <li><a href="#" class="dropdown_link">new arrivals</a></li>
-
+                    
                                             </div>
-                                         </ul>
-                                    
+                                        </ul>
+                    
                                     </div>
                                 </li>
-                                <li><a href="#" class="mnav_link">About Us</a></li>
-                                <li><a href="#" class="mnav_link">Contact Us</a></li>
-                                <li><a href="#" class="mnav_btn sign-in">Sign in</a></li>
+                    
+                                <li><a href="#" class="mnav_btn log-in">Log in</a></li>
+                    
                                 <li><a href="#" class="mnav_btn sign-up">Sign Up</a></li>
                             </ul>
                         </div>
                     </div>
-                </div>
-            </nav>
-        </div> 
+                    <!-- Mobile Navigation End -->
+                    
+                    <!-- Desktop Navigations -->
+                    <div class="desk_links">
+                        <ul class="desk_link-lists">
+                            <li><a href="#" class="desk_link">Home</a></li>
+                            <li><a href="#" class="desk_link">Deals</a></li>
+                            <li><a href="#" class="desk_link">New Arrials</a></li>
+                            <li><a href="#" class="desk_link">Packages</a></li>
+                            <!-- Access Account Buttons -->
+                            <li><a href="#" class="desk_link">Log in</a></li>
+                            <li><a href="#" class="desk_link btn_primary">Sign Up</a></li>
+                        </ul>
+                    </div>
+                    <!-- Desktop Navigations End -->
+                </div>   
+            </div>
+        </nav>
     </header>
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore repellat, dicta architecto exercitationem reiciendis quidem saepe neque? Cumque consectetur pariatur libero quia similique sapiente nihil excepturi quam illum necessitatibus fugiat est id nesciunt minus quisquam, hic cum soluta repellendus repellat deleniti. A aperiam reiciendis quidem eveniet voluptatem similique ipsa ipsum!</p>

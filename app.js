@@ -4,13 +4,14 @@ const body = document.body;
 const openMnav = document.querySelector(".mnav_open-btn");
 const mnavMenu = document.querySelector(".mnav_menu");
 const closeMnav = document.querySelector(".mnav_close-btn");
+const mnavLinks = document.querySelectorAll(".mnav_link");
 const overlay = document.getElementById("overlay");
 
 openMnav.addEventListener("click", () => {
   mnavMenu.classList.remove("translate-x-full", "opacity-0");
   mnavMenu.classList.add("translate-x-0", "opacity-100");
   overlay.classList.remove("opacity-0", "pointer-events-none");
-  overlay.classList.add("opacity-100");
+  overlay.classList.add("opacity-100", "pointer-events-auto");
 
   // Lock scroll when the menu is open
   lockScroll();
@@ -19,20 +20,35 @@ closeMnav.addEventListener("click", () => {
     mnavMenu.classList.remove("translate-x-0", "opacity-100");
     mnavMenu.classList.add("translate-x-full", "opacity-0");
     overlay.classList.add("opacity-0", "pointer-events-none");
-    overlay.classList.remove("opacity-100");
+    overlay.classList.remove("opacity-100", "pointer-events-auto");
 
     // Unlock scroll when the menu is closed
     unlockScroll();
-
     // Close all opened dropdown menus when you close the mnav menu
     closeAllDropdowns();
 });
-// close if overlay clicked
+
+// Close Nav menu when link is clicked
+mnavLinks.forEach(link =>{
+    link.addEventListener("click", () => {
+        mnavMenu.classList.remove("translate-x-0", "opacity-100");
+        mnavMenu.classList.add("translate-x-full", "opacity-0");
+        overlay.classList.add("opacity-0", "pointer-events-none");
+        overlay.classList.remove("opacity-100", "pointer-events-auto");
+
+        // Unlock scroll when the menu is closed
+        unlockScroll();
+        // Close all opened dropdown menus when you close the mnav menu
+        closeAllDropdowns();
+    });
+});
+
+// close menu if overlay clicked
 overlay.addEventListener("click", () => {
   mnavMenu.classList.remove("translate-x-0", "opacity-100");
   mnavMenu.classList.add("translate-x-full", "opacity-0");
+  overlay.classList.remove("opacity-100", "pointer-events-auto");
   overlay.classList.add("opacity-0", "pointer-events-none");
-  overlay.classList.remove("opacity-100");
 
   // Close all opened dropdown menus when you close the mnav menu
   closeAllDropdowns();
@@ -48,7 +64,12 @@ function lockScroll() {
     body.style.top = `${lockedScrollY}`;
     body.style.left = "0";
     body.style.right = "0";
-    if (scrollbarWidth) body.style.paddingRight = `${scrollbarWidth}px`;
+    // check if the mnav menu is opening, then add padding to the right to compensate for removing the scroll bar.
+    if (mnav.classList.contains("translate-x-0") && scrollbarWidth) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.body.style.paddingRight = "";
+    }
 }
 
 function unlockScroll() {
@@ -60,22 +81,39 @@ function unlockScroll() {
 }
 // Mobile Nav Ends
 
+
 // DROPDOWN
 const dropdowns = document.querySelectorAll(".dropdown");
 
 // Open or Close the dropdown menus
 dropdowns.forEach(dropdown => {
-    const btn = dropdown.querySelector(".dropdown_btn");
-    const icon = dropdown.querySelector(".dropdown_icon");
-    const list = dropdown.querySelector(".dropdown_list");
-    
-    btn.addEventListener("click", () => {
-        const isOpen = !list.classList.contains("max-h-96");
+  const btn = dropdown.querySelector(".dropdown_btn");
+  const icon = dropdown.querySelector(".dropdown_icon");
+  const list = dropdown.querySelector(".dropdown_list");
+  const dropdownLinks = dropdown.querySelectorAll(".dropdown_link");
 
-        list.classList.toggle("max-h-0", !isOpen);
-        list.classList.toggle("max-h-96", isOpen);
-        icon.classList.toggle("rotate-180", isOpen);
+  btn.addEventListener("click", () => {
+    const isOpen = !list.classList.contains("max-h-96");
+
+    list.classList.toggle("max-h-0", !isOpen);
+    list.classList.toggle("max-h-96", isOpen);
+    icon.classList.toggle("rotate-180", isOpen);
+  });
+
+  // Close Nav menu when dropdown link is clicked
+  dropdownLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mnavMenu.classList.remove("translate-x-0", "opacity-100");
+      mnavMenu.classList.add("translate-x-full", "opacity-0");
+      overlay.classList.add("opacity-0", "pointer-events-none");
+      overlay.classList.remove("opacity-100", "pointer-events-auto");
+
+      // Unlock scroll when the menu is closed
+      unlockScroll();
+      // Close all opened dropdown menus when you close the mnav menu
+      closeAllDropdowns();
     });
+  });
 });
 
 // Close all opened dropdown menus when the mnav menu closes
