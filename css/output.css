@@ -7,7 +7,9 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-600: oklch(57.7% 0.245 27.325);
     --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -19,8 +21,11 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
     --font-weight-medium: 500;
     --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --drop-shadow-xl: 0 9px 7px rgb(0 0 0 / 0.1);
     --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15);
@@ -344,6 +349,10 @@
   }
   button {
     cursor: pointer;
+    text-transform: capitalize;
+  }
+  img {
+    width: 100%;
   }
   .overlay {
     pointer-events: none;
@@ -417,19 +426,15 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding-inline: calc(var(--spacing) * 5);
     @media (width >= 64rem) {
       width: auto;
-    }
-    @media (width >= 64rem) {
-      padding-inline: calc(var(--spacing) * 0);
     }
   }
   .mnav_menu {
     position: fixed;
     top: calc(var(--spacing) * 0);
     right: calc(var(--spacing) * 0);
-    z-index: 100;
+    z-index: 200;
     height: 100%;
     width: calc(11/12 * 100%);
     --tw-translate-x: 100%;
@@ -525,6 +530,7 @@
     font-family: var(--font-pop);
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+    color: var(--color-secondary);
     text-transform: capitalize;
   }
   .dropdown_icon {
@@ -574,6 +580,110 @@
     font-family: var(--font-pop);
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .hero {
+    margin-top: calc(var(--spacing) * 20);
+  }
+  .hero_wrapper {
+    display: flex;
+    align-items: stretch;
+    padding-inline: calc(var(--spacing) * 5);
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 5);
+    }
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 10);
+    }
+  }
+  .hero_banner-left {
+    display: none;
+    max-height: 756px;
+    width: calc(1/3 * 100%);
+    border-radius: var(--radius-xl);
+    background-color: color-mix(in srgb, oklch(87.2% 0.01 258.338) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-300) 60%, transparent);
+    }
+    background-image: url('../images/hero-ls.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    @media (width >= 64rem) {
+      display: block;
+    }
+  }
+  .hero_banner-right {
+    display: none;
+    height: 756px;
+    width: calc(1/3 * 100%);
+    border-radius: var(--radius-xl);
+    background-color: color-mix(in srgb, oklch(87.2% 0.01 258.338) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-300) 60%, transparent);
+    }
+    background-image: url('../images/hero-rs.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    @media (width >= 64rem) {
+      display: block;
+    }
+  }
+  .hero_banner-top {
+    height: clamp(8.3125rem, 30vw, 16.875rem);
+    width: clamp(16.25rem, 100%, 57.8125rem);
+    overflow: clip;
+    border-radius: var(--radius-xl);
+    background-color: color-mix(in srgb, oklch(87.2% 0.01 258.338) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-300) 60%, transparent);
+    }
+    background-image: url('../images/hero-1.png');
+    background-size: cover;
+    background-position: left top;
+    @media (width >= 64rem) {
+      height: clamp(9.35rem, 30vw, 12.5rem);
+    }
+    @media (width >= 64rem) {
+      width: 100%;
+    }
+  }
+  .hero_banner-bottom {
+    height: clamp(8.3125rem, 30vw, 16.875rem);
+    width: clamp(16.25rem, 100%, 57.8125rem);
+    overflow: clip;
+    border-radius: var(--radius-xl);
+    background-image: url('../images/hero-2.png');
+    background-size: cover;
+    background-position: left top;
+    @media (width >= 64rem) {
+      height: clamp(9.35rem, 30vw, 12.5rem);
+    }
+    @media (width >= 64rem) {
+      background-position: top;
+    }
+  }
+  .hero_content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    @media (width >= 64rem) {
+      width: calc(1/2 * 100%);
+    }
+  }
+  .hero_heading {
+    margin-top: calc(var(--spacing) * 5);
+    display: flex;
+    flex-direction: column;
+  }
+  .main_heading {
+    font-size: var(--text-8xl);
+    line-height: var(--tw-leading, var(--text-8xl--line-height));
+    text-transform: uppercase;
+  }
+  .sub_heading {
+    --tw-text-shadow-color: oklch(57.7% 0.245 27.325);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-text-shadow-color: color-mix(in oklab, var(--color-red-600) var(--tw-text-shadow-alpha), transparent);
+    }
   }
 }
 @property --tw-translate-x {
@@ -732,6 +842,15 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-text-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-text-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -770,6 +889,8 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-text-shadow-color: initial;
+      --tw-text-shadow-alpha: 100%;
     }
   }
 }
