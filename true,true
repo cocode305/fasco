@@ -584,9 +584,6 @@
   }
   .hero {
     margin-top: calc(var(--spacing) * 20);
-    @media (width >= 48rem) {
-      margin-top: calc(var(--spacing) * 28);
-    }
   }
   .hero_wrapper {
     display: flex;
@@ -610,7 +607,7 @@
     background-image: url('../images/hero-ls.png');
     background-position: bottom;
     background-repeat: no-repeat;
-    @media (width >= 80rem) {
+    @media (width >= 64rem) {
       display: block;
     }
   }
@@ -625,7 +622,7 @@
     background-image: url('../images/hero-rs.png');
     background-position: bottom;
     background-repeat: no-repeat;
-    @media (width >= 80rem) {
+    @media (width >= 64rem) {
       display: block;
     }
   }
@@ -667,60 +664,26 @@
     display: flex;
     width: 100%;
     flex-direction: column;
+    @media (width >= 64rem) {
+      max-width: 360px;
+    }
     @media (width >= 80rem) {
       max-width: 425px;
     }
   }
-  .hero_text-content {
-    margin-top: calc(var(--spacing) * 5);
-  }
   .hero_heading {
+    margin-top: calc(var(--spacing) * 5);
     display: flex;
     flex-direction: column;
-    @media (width >= 80rem) {
-      --tw-leading: calc(var(--spacing) * 32);
-      line-height: calc(var(--spacing) * 32);
-    }
   }
   .main_heading {
-    text-align: center;
-    --tw-leading: calc(var(--spacing) * 24);
-    line-height: calc(var(--spacing) * 24);
+    font-size: var(--text-8xl);
+    line-height: var(--tw-leading, var(--text-8xl--line-height));
     text-transform: uppercase;
-    @media (width < 42rem) {
-      font-size: clamp(4rem, 18vw, 10rem);
-    }
-    @media (width >= 42rem) {
-      font-size: clamp(4rem, 18vw, 8rem);
-    }
-    @media (width >= 42rem) {
-      --tw-leading: calc(var(--spacing) * 40);
-      line-height: calc(var(--spacing) * 40);
-    }
-    @media (width >= 80rem) {
-      font-size: 91px;
-    }
   }
   .sub_heading {
-    text-align: center;
-    font-size: 125px;
-    --tw-leading: calc(var(--spacing) * 28);
-    line-height: calc(var(--spacing) * 28);
-    color: var(--color-white);
-    text-transform: uppercase;
-    text-shadow:  0px 0px 4px #484848;
-    @media (width >= 42rem) {
-      --tw-leading: calc(var(--spacing) * 40);
-      line-height: calc(var(--spacing) * 40);
-    }
-    @media (width >= 48rem) {
-      font-size: 185px;
-    }
-  }
-  .hero_title {
-    margin-top: calc(var(--spacing) * 5);
-    text-align: center;
-    text-transform: uppercase;
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
 }
 @property --tw-translate-x {
@@ -879,10 +842,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -921,7 +880,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-leading: initial;
     }
   }
 }

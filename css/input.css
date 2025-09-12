@@ -142,18 +142,18 @@
 
     /* Hero Section */
         .hero {
-            @apply mt-20;
+            @apply mt-20 mobile-lg:mt-28;
         }
         .hero_wrapper {
-            @apply flex items-stretch px-5 tablet-lg:px-10 tablet-lg:gap-5 ;
+            @apply flex items-stretch px-5 tablet-lg:px-10 tablet-lg:gap-10;
         }
         /* Hero Banners */
             .hero_banner-left {
-                @apply hidden tablet-lg:block w-1/3 max-h-[756px]
+                @apply hidden laptop:block w-1/3 
                 bg-[url('../images/hero-ls.png')] bg-no-repeat bg-bottom bg-gray-300/60 rounded-xl;
             }
             .hero_banner-right {
-                @apply hidden tablet-lg:block w-1/3 h-[756px]
+                @apply hidden laptop:block w-1/3 
                 bg-[url('../images/hero-rs.png')] bg-no-repeat bg-bottom bg-gray-300/60 rounded-xl;
             }
             .hero_banner-top {
@@ -166,25 +166,31 @@
             .hero_banner-bottom {
                 @apply w-[clamp(16.25rem,100%,57.8125rem)] 
                 h-[clamp(8.3125rem,30vw,16.875rem)]
-                tablet-lg:h-[clamp(9.35rem,30vw,12.5rem)]
+                tablet-lg:h-[clamp(9.35rem,30vw,12.5rem)] 
                 bg-[url('../images/hero-2.png')] bg-top-left tablet-lg:bg-top bg-cover overflow-clip rounded-xl;
             }
         /* Hero Banners End */
 
         /* Hero Content */
             .hero_content {
-                @apply w-full flex flex-col tablet-lg:w-1/2;
+                @apply w-full flex flex-col laptop:max-w-[425px];
+            }
+            .hero_text-content {
+                @apply mt-5
             }
             
             /* Hero Heading */
                 .hero_heading {
-                    @apply flex flex-col mt-5;
+                    @apply flex flex-col laptop:leading-32;
                 }
                 .main_heading {
-                    @apply text-8xl uppercase;
+                    @apply max-mobile-sm:text-[clamp(4rem,18vw,10rem)] min-mobile-sm:text-[clamp(4rem,18vw,8rem)] laptop:text-[91px] uppercase text-center leading-24 mobile-sm:leading-40;
                 }
                 .sub_heading {
-                    @apply text-shadow-red-600
+                    @apply text-white text-[125px] mobile-lg:text-[185px] leading-28 mobile-sm:leading-40 uppercase text-center [text-shadow:_0px_0px_4px_#484848];
+                }
+                .hero_title {
+                    @apply uppercase text-center mt-5;
                 }
             /* Hero Heading End */
 
