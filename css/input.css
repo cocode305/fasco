@@ -112,7 +112,7 @@
                 @apply flex justify-between items-center cursor-pointer w-full font-volk uppercase;
             }
             .dropdown_btn-text {
-                @apply font-pop capitalize text-xl block w-full text-left py-3 text-secondary;
+                @apply font-pop capitalize text-xl block w-full text-left py-3 text-secondary font-medium;
             }
             .dropdown_icon {
                 @apply text-xl transition-transform duration-500;
