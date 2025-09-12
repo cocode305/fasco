@@ -40,7 +40,7 @@
     }
 
     button {
-        @apply cursor-pointer capitalize;
+        @apply cursor-pointer capitalize inline-block;
     }
 
     img {
@@ -160,40 +160,45 @@
                 @apply w-[clamp(16.25rem,100%,57.8125rem)] 
                 h-[clamp(8.3125rem,30vw,16.875rem)] 
                 tablet-lg:h-[clamp(9.35rem,30vw,12.5rem)] 
-                tablet-lg:w-full overflow-clip 
+                tablet-lg:w-full
                 bg-[url('../images/hero-1.png')] bg-top-left bg-cover bg-gray-300/60 rounded-xl;
             }
             .hero_banner-bottom {
                 @apply w-[clamp(16.25rem,100%,57.8125rem)] 
                 h-[clamp(8.3125rem,30vw,16.875rem)]
                 tablet-lg:h-[clamp(9.35rem,30vw,12.5rem)] 
-                bg-[url('../images/hero-2.png')] bg-top-left tablet-lg:bg-top bg-cover overflow-clip rounded-xl;
+                bg-[url('../images/hero-2.png')] bg-top-left tablet-lg:bg-top bg-cover rounded-xl;
             }
         /* Hero Banners End */
 
         /* Hero Content */
             .hero_content {
-                @apply w-full flex flex-col laptop:max-w-[425px];
+                @apply w-full flex flex-col laptop:max-w-[425px] space-y-5;
             }
-            .hero_text-content {
+            /* .hero_text-content {
                 @apply mt-5
-            }
+            } */
             
             /* Hero Heading */
                 .hero_heading {
                     @apply flex flex-col laptop:leading-32;
                 }
                 .main_heading {
-                    @apply max-mobile-sm:text-[clamp(4rem,18vw,10rem)] min-mobile-sm:text-[clamp(4rem,18vw,8rem)] laptop:text-[91px] uppercase text-center leading-24 mobile-sm:leading-40;
+                    @apply max-mobile-sm:text-[clamp(4rem,18vw,10rem)] min-mobile-sm:text-[clamp(4rem,18vw,8rem)] laptop:text-[91px] uppercase text-center leading-24 mobile-sm:leading-28;
                 }
                 .sub_heading {
-                    @apply text-white text-[125px] mobile-lg:text-[185px] leading-28 mobile-sm:leading-40 uppercase text-center [text-shadow:_0px_0px_4px_#484848];
+                    @apply text-white text-[125px] mobile-lg:text-[185px] leading-28 mobile-sm:leading-36 uppercase text-center [text-shadow:_0px_0px_4px_#484848];
                 }
                 .hero_title {
-                    @apply uppercase text-center mt-5;
+                    @apply uppercase text-xl text-center mt-5;
                 }
             /* Hero Heading End */
-
+                .hero_cta {
+                    @apply flex justify-center;
+                }
+                .CTA_btn {
+                    @apply w-full tablet-sm:w-1/2 tablet-sm:mx-auto bg-primary text-white rounded-lg py-3 mt-5 text-xl uppercase;
+                }
         /* Hero Content End */
     /* Hero Section End */
 
